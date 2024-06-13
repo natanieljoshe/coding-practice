@@ -1,0 +1,38 @@
+package com.program;
+
+import java.util.Arrays;
+
+public class App {
+    public static void main(String[] args) throws Exception {
+        
+        int[] nums = {10,5,6,4,101,249};
+        insertionSort(nums);
+        System.out.println(Arrays.toString(insertionSort(nums)));
+
+    }
+
+    public static int [] insertionSort (int[] inputAngka)throws Exception{
+
+        //logic
+        for(int i=1;i<=inputAngka.length-1;i++){
+
+            //insertion sort itu menurun
+            for(int j=i;j>0;j--){
+                if(inputAngka[j]<inputAngka[j-1]){
+                //dia akan tetap ditukar meskipun tidak lebih kecil. (ditukar dengan dirinya sendiri)
+                //swap
+                int temp=inputAngka[j];
+                inputAngka[j]=inputAngka[j-1];
+                inputAngka[j-1]=temp;
+
+                }
+            }
+
+        }
+        return inputAngka;
+    
+    }
+
+}
+
+    
