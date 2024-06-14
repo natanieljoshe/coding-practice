@@ -26,6 +26,9 @@ public class Main{
         //array == gabungan nilai yang akan di sort
 		int length = array.length;
         
+
+        //Void == tidak mengambil nilai (dalam kasus ini array) dan mengembalikan nilai baru
+        //Void == mengambil nilai, lalu mengelola dan mengembalikan nilai yang sama
         //Kalau datanya sudah dibaca semua & untuk keluar dari recursive
 		if (length <= 1) return; //base case
 		
