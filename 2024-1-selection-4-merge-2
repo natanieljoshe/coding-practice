@@ -29,7 +29,11 @@ public class Main{
 
         //Void == tidak mengambil nilai (dalam kasus ini array) dan mengembalikan nilai baru
         //Void == mengambil nilai, lalu mengelola dan mengembalikan nilai yang sama
+        
+        
         //Kalau datanya sudah dibaca semua & untuk keluar dari recursive
+        //kita menggunakan return untuk "keluar" dari recursive dan keluar dari fuction ini
+        //sehingga code sisanya tidak akan diproses
 		if (length <= 1) return; //base case
 		
         //=====PEMISAHAN=====
