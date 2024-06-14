@@ -1,0 +1,98 @@
+package com.program;
+
+import java.util.Arrays;
+
+
+//DIBUAT BERDASARKAN YOUTUBE CHANNEL, BRO CODE
+public class Main{
+	
+    public static void main(String args[])
+    {   	
+    	// merge sort = recursively divide array in 2, then sort, then re-combine
+    	// run-time complexity = O(n Log n)
+    	// space complexity    = O(n)
+    	
+        int[] nilai = {8, 2, 5, 3, 4, 7, 6, 1};
+        
+        mergeSort(nilai);
+        
+        for(int i = 0; i < nilai.length; i++){
+            System.out.print(nilai[i]+ " ");
+        }
+    }
+
+	private static void mergeSort(int[] array) {
+		
+        //array == gabungan nilai yang akan di sort
+		int length = array.length;
+        
+        //Kalau datanya sudah dibaca semua & untuk keluar dari recursive
+		if (length <= 1) return; //base case
+		
+        //=====PEMISAHAN=====
+		int middle = length / 2;
+        //left array baca hingga tengah
+		int[] leftArray = new int[middle];
+        //right array baca dari tengah hingga habis
+		int[] rightArray = new int[length - middle];
+		
+		int i = 0; //left array
+		int j = 0; //right array
+
+        //looping memisahkan array
+		for(; i < length; i++) {
+			if(i < middle) {
+				leftArray[i] = array[i];
+			}
+			else {
+				rightArray[j] = array[i];
+				j++;
+			}
+		}
+
+        //Recursive (mengulangi fuction yang sama, hingga array sudah terpisah semua)
+		mergeSort(leftArray);
+		mergeSort(rightArray);
+
+        //=====PENGGABUNGAN=====
+		merge(leftArray, rightArray, array);
+	}
+	
+	private static void merge(int[] leftArray, int[] rightArray, int[] array) {
+		
+
+        //=====PENGGABUNGAN=====
+		int leftSize = array.length / 2;
+		int rightSize = array.length - leftSize;
+		int i = 0, l = 0, r = 0; //indices
+		
+        //i == array gabungan, l==left, r==right
+		//check the conditions for merging
+
+        //Membandingkan 2 array (apabila keduanya masih belum selesai dibaca)
+		while(l < leftSize && r < rightSize) {
+			if(leftArray[l] < rightArray[r]) {
+				array[i] = leftArray[l];
+				i++;
+				l++;
+			}
+			else {
+				array[i] = rightArray[r];
+				i++;
+				r++;
+			}
+		}
+
+        //Apabila salah satu array sudah selesai dibaca
+		while(l < leftSize) {
+			array[i] = leftArray[l];
+			i++;
+			l++;
+		}
+		while(r < rightSize) {
+			array[i] = rightArray[r];
+			i++;
+			r++;
+		}
+	}
+}
