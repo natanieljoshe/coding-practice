@@ -1,0 +1,29 @@
+package com.program;
+
+import java.util.Arrays;
+
+
+public class Main{
+	
+    public static void main(String args[]){
+
+		String[] nama = {"Budi", "Rizky", "Alex"};
+		sequentialSearch(nama, "Alex");
+
+	}
+
+	public static String sequentialSearch(String[] input, String key){
+		// boolean status = false;
+		for(int i=0;i<input.length;i++){
+
+			if(key.equalsIgnoreCase(input[i])){
+				System.out.println("ditemukan di index ke-" + i);
+				return "ditemukan";
+			}
+		}
+		System.out.println("tidak ditemukan");
+		return "tidak ditemukan";
+
+	}
+	
+}
