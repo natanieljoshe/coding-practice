@@ -1,0 +1,71 @@
+package com.program;
+
+import java.util.Arrays;
+
+
+public class Main{
+	
+    public static void main(String args[]){
+
+		int[] angka = {2,5,8,10,12,14,16};
+		String res = binarySearchInt(angka, 16);
+		System.out.println(res);
+
+		//Binary search sulit diterapkan dalam mencari string
+		// String[] nama = {"Alex", "Budi", "Dani", "Gilang", "John"};
+		// String res2 = binarySearchString(nama, "Dani");
+		// System.out.println("\n"+res2);
+	}
+
+	public static String binarySearchInt(int[] input, int key){
+
+		int low=0;
+		int high=input.length-1;
+		int med;
+		boolean status = false;
+
+		while(low<=high){
+			med= (low+high)/2;
+
+			if(input[med]==key){
+				status=true;
+				return "Ditemukan di posisi indek ke-"+med;
+			}
+			else{
+
+				//karna datanya diisi secara asscending, maka key>input[med]
+				if(key>input[med]){
+					low=med+1;
+				}else{
+					high=med-1;
+				}
+			}
+		}
+		return "Tidak ditemukan";
+	}
+	
+	// public static String binarySearchString(String[] input, String key){
+
+	// 	int low=0;
+	// 	int high=input.length-1;
+	// 	int med;
+	// 	boolean status = false;
+
+	// 	while(low<=high){
+	// 		med= (low+high)/2;
+
+	// 		if(key.compareToIgnoreCase(input[med])>0){
+	// 			status=true;
+	// 			return "Ditemukan di posisi indek ke-"+med;
+	// 		}
+	// 		else{
+	// 			if(key.compareTo(input[med])>0){
+	// 				low=med+1;
+	// 			}else{
+	// 				high=med-1;
+	// 			}
+	// 		}
+	// 	}
+	// 	return "Tidak ditemukan";
+	// }
+}
