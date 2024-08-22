@@ -1,0 +1,21 @@
+public class Main{
+  public static void main(string[] args){
+
+    /**This program searching for Lowest Common Multiple (KPK) */
+    Scanner inObj = new Scanner(System.in);
+        int input1 =inObj.nextInt();
+        int temp=input1;
+        int res=1;
+
+        for(int i=2;i<temp;i++){
+
+            if(temp%i==0){
+                temp=temp/i;
+                System.out.print(i + " " );
+                i-=1;
+            }
+        }
+        System.out.print(temp);
+
+  }
+}
