@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        /**This program searching for number factorial*/
+        Scanner inputObj = new Scanner(System.in);
+        System.out.println("Enter a number:");
+        int input1 = inputObj.nextInt();
+        System.out.println("faktornya adalah");
+
+        for(int i=1;i<=input1;i++){
+            if(input1%i==0){
+                System.out.print(i + " ");
+            }
+        }
+}
