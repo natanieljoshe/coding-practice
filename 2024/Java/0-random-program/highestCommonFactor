@@ -1,0 +1,22 @@
+public class Main {
+  public static void main(String[] args){
+
+    /**This program searching for Highest Common Factor (FPB) */
+    Scanner inObj = new Scanner(System.in);
+        int input1 = inObj.nextInt();
+        int temp=input1,check=0;
+
+        for(int i=2;i<temp;i++){
+
+            if(temp%i==0){
+                temp/=i;
+                if(check!=i){
+                    System.out.print(i+" ");
+                    check=i;
+                }
+                i-=1;
+            }
+        }
+        System.out.print(temp);
+  }
+}
